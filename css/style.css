@@ -1,0 +1,30 @@
+body {
+  margin-top: 100px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+[ng-app] {
+  margin: 20%;
+}
+
+[ng-controller] {
+  margin: 10%;
+  padding: 5%;
+  background-color: rgb(150,100,100,0.95);
+}
+/*
+[ng-model=content] {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+*/
+[ng-model=content], select {
+  width: 100%;
+}

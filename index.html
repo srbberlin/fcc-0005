@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - fcc-0005 Wikipedia Mask </title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div ng-app="wikiApp">
+  <div ng-controller="wikiController">
+    <a href="#"></a>
+    <input 
+      type="text"
+      placeholder="Just type something and hit enter"
+      ng-model="content" 
+      ng-keypress="enter($event)">
+    </input>
+    <br><br><br>
+    <select>
+      <option 
+        ng-repeat="i in results" 
+        ng-selected="$index === 0"
+        ng-bind="i.title" 
+        ng-value="i.link"
+        ng-click="selected($event)"></option>
+      <option 
+        value="https://en.wikipedia.org/wiki/Special:Random"
+        ng-click="selected($event)"
+        ng-bind="title"></option>
+    </select>
+    <div>
+      <br>
+      <!--<h3 ng-bind="title"></h3>-->
+      <button type="button" ng-bind-html="extract" ng-click="connect()"></button>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-sanitize.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
