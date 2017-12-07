@@ -5,10 +5,10 @@ app.controller("wikiController", ["$scope", "searchResults", function($scope, se
   $scope.randomTitle = "Random Article";
   $scope.extract;
   $scope.title;
-  $scope.link;
   $scope.results = [];
   $scope.in = $("input");
-  $scope.url = "https://en.wikipedia.org/w/api.php?api.php?action=query&list=random&rnlimit=1";
+  $scope.randomUrl = "https://en.wikipedia.org/wiki/Special:Random";
+  $scope.link = $scope.randomUrl;
 
   $scope.in.focus();
   $scope.title = $scope.randomTitle;
@@ -42,6 +42,7 @@ app.controller("wikiController", ["$scope", "searchResults", function($scope, se
             $scope.content = "";
             $scope.title = $scope.randomTitle;
             $scope.extract = $scope.randomExtract + "<br><br>See more ==>";
+            $scope.link = $scope.randomUrl;
           }
         }
       );
@@ -49,17 +50,10 @@ app.controller("wikiController", ["$scope", "searchResults", function($scope, se
   };
   
   $scope.selected = function ($event) {
-    if (this.i) {
-      console.log(this.i);
-      $scope.title = this.i.title;
-      $scope.extract = this.i.extract + "<br><br>See more ==>";
-      $scope.link = this.i.link;
-    }
-    else {
-      $scope.title = $event.target.text;
-      $scope.extract = $scope.randomExtract + "<br><br>See more ==>";
-      $scope.link = $event.target.value;
-    }
+    console.log(this.i);
+    $scope.title = this.i.title;
+    $scope.extract = this.i.extract + "<br><br>See more ==>";
+    $scope.link = this.i.link;
   }
   
   $scope.connect = function() {
