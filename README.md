@@ -1,5 +1,5 @@
 # fcc-0005
-Wikipedia Mask
+FreeCodeCamp: Wikipedia Mask
 
 Packages:
 
