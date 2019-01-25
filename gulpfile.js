@@ -9,8 +9,9 @@ var config = {
   img:    __dirname + '/img/**/*'
 }
 
-function reload () {
+function reload (cb) {
   browserSync.reload()
+  cb()
 }
 
 function serve () {
